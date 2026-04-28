@@ -1,0 +1,20 @@
+.idea/
+*.iml
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# Backend
+backend/.gradle/
+backend/build/
+
+# Environment
+.env
+frontend/.env
+frontend/.env.local
+backend/.env
+
+# OS
+.DS_Store
+Thumbs.db
