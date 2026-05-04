@@ -6,7 +6,7 @@ services:
     container_name: room-reservation-mysql
     restart: unless-stopped
     ports:
-      - "${MYSQL_PORT:-3306}:3306"
+      - "${MYSQL_PORT:-13307}:3306"
     environment:
       MYSQL_DATABASE: ${MYSQL_DATABASE:-room_reservation}
       MYSQL_USER: ${MYSQL_USER:-room_user}
@@ -17,6 +17,7 @@ services:
       - --collation-server=utf8mb4_unicode_ci
     volumes:
       - mysql-data:/var/lib/mysql
+      - ./backend/src/main/resources/db/schema/mysql:/docker-entrypoint-initdb.d:ro
 
   backend:
     build:
